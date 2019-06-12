@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".adminCategoryActivity">
+
+    <TextView
+
+        android:id="@+id/slogan_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add New Product"
+        android:textAlignment="center"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.07999998" />
+
+    <ImageView
+        android:id="@+id/tshirts"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/tshirts"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.03"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/slogan_category"
+        app:layout_constraintVertical_bias="0.16000003" />
+
+
+    <ImageView
+        android:id="@+id/sports_tshirts"
+        android:layout_width="90dp"
+        android:layout_height="80dp"
+        android:src="@drawable/sports"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.36"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/slogan_category"
+        app:layout_constraintVertical_bias="0.16000003" />
+
+
+    <ImageView
+        android:id="@+id/femaleDresses"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/female_dresses"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.69"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/slogan_category"
+        app:layout_constraintVertical_bias="0.16000003" />
+
+    <ImageView
+        android:id="@+id/sweather"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/sweather"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.97"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/slogan_category"
+        app:layout_constraintVertical_bias="0.16000003" />
+
+
+    <ImageView
+        android:id="@+id/glasses"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/glasses"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.03"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tshirts"
+        app:layout_constraintVertical_bias="0.16000003" />
+
+
+    <ImageView
+        android:id="@+id/bags"
+        android:layout_width="90dp"
+        android:layout_height="80dp"
+        android:src="@drawable/purses_bags"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.36"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sports_tshirts"
+        app:layout_constraintVertical_bias="0.16000003" />
+
+
+    <ImageView
+        android:id="@+id/hats"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/hats"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.69"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/femaleDresses"
+        app:layout_constraintVertical_bias="0.16000003" />
+
+    <ImageView
+        android:id="@+id/shoes"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/shoess"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.97"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sweather"
+        app:layout_constraintVertical_bias="0.16000003" />
+
+
+    <ImageView
+        android:id="@+id/headphones"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/headphoness"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.03"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/glasses"
+        app:layout_constraintVertical_bias="0.22000003" />
+
+
+    <ImageView
+        android:id="@+id/laptob"
+        android:layout_width="90dp"
+        android:layout_height="80dp"
+        android:src="@drawable/laptops"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.36"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bags"
+        app:layout_constraintVertical_bias="0.22000003" />
+
+
+    <ImageView
+        android:id="@+id/watches"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/watches"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.69"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/hats"
+        app:layout_constraintVertical_bias="0.22000003" />
+
+    <ImageView
+        android:id="@+id/mobiles"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/mobiles"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.97"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/shoes"
+        app:layout_constraintVertical_bias="0.22000003" />
+
+
+</android.support.constraint.ConstraintLayout>
