@@ -14,7 +14,11 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.widget.TextView;
 
+import com.example.souqcom.Prevalent.Prevalent;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 import io.paperdb.Paper;
 
 public class HomeActivity extends AppCompatActivity
@@ -48,6 +52,13 @@ public class HomeActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+
+        View headerView=navigationView.getHeaderView(0);
+        TextView username=headerView.findViewById(R.id.user_profile_name);
+        CircleImageView userImage=headerView.findViewById(R.id.user_profile_image);
+
+        username.setText(Prevalent.currentOnlineUser.getName());
+
     }
 
     @Override
