@@ -89,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
                         {
                             Toast.makeText(MainActivity.this, "logged in succsessfully...", Toast.LENGTH_SHORT).show();
                             loadingBar.dismiss();
+                            Prevalent.currentOnlineUser=userData;
                             goToHomeActvity();
                         }
                         else
