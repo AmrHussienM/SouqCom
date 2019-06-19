@@ -40,6 +40,7 @@ public class HomeActivity extends AppCompatActivity
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,8 +60,7 @@ public class HomeActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+               startActivity(new Intent(HomeActivity.this,CartActivity.class));
             }
         });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -97,13 +97,23 @@ public class HomeActivity extends AppCompatActivity
         FirebaseRecyclerAdapter<Products, ProductViewHolder> adapter=
                 new FirebaseRecyclerAdapter<Products, ProductViewHolder>(options) {
                     @Override
-                    protected void onBindViewHolder(@NonNull ProductViewHolder holder, int position, @NonNull Products model)
+                    protected void onBindViewHolder(@NonNull ProductViewHolder holder, int position, @NonNull final Products model)
                     {
                         holder.txtProductName.setText(model.getpName());
                         holder.txtProductPrice.setText("Price = " + model.getPrice() + "$");
                         holder.txtProductDescription.setText(model.getDescription());
 
                         Picasso.get().load(model.getImage()).into(holder.imageView);
+
+                        holder.itemView.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+
+                            Intent intent=new Intent(HomeActivity.this,ProductDetailsActivity.class);
+                            intent.putExtra("pid",model.getPid());
+                            startActivity(intent);
+                            }
+                        });
 
                     }
 
@@ -156,13 +166,20 @@ public class HomeActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_cart) {
-            // Handle the camera action
-        } else if (id == R.id.nav_orders) {
+        if (id == R.id.nav_cart)
+        {
+            startActivity(new Intent(HomeActivity.this,CartActivity.class));
 
-        } else if (id == R.id.nav_categories) {
+        }
+        else if (id == R.id.nav_orders)
+        {
 
-        } else if (id == R.id.nav_settings)
+        }
+        else if (id == R.id.nav_categories)
+        {
+
+        }
+        else if (id == R.id.nav_settings)
         {
             Intent intent=new Intent(HomeActivity.this,SettingsActivity.class);
             startActivity(intent);
