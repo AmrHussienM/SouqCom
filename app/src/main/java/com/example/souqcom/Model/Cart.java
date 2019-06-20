@@ -4,7 +4,8 @@ public class Cart {
 
     private String pid,pName,price,quantity,discount;
 
-    public Cart() {
+    public Cart()
+    {
     }
 
     public Cart(String pid, String pName, String price, String quantity, String discount) {
