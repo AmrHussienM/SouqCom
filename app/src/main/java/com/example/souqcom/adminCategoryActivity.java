@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 public class adminCategoryActivity extends AppCompatActivity {
@@ -11,6 +12,7 @@ public class adminCategoryActivity extends AppCompatActivity {
     private ImageView tshirts,sportsTshirts,dresses,sweather;
     private ImageView glasses,hatcaps,walletBagsPurses,shoes;
     private ImageView headPhones,laptobs,watches,mobilePhones;
+    private Button adminLogout,checkOrdersBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +22,32 @@ public class adminCategoryActivity extends AppCompatActivity {
         identifications();
 
         prodectClickListener();
+
+        checkOrdersBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(adminCategoryActivity.this,AdminNewOrderActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        logout();
+    }
+
+
+
+
+    private void logout()
+    {
+        adminLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(adminCategoryActivity.this,MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
     private void prodectClickListener()
@@ -168,5 +196,7 @@ public class adminCategoryActivity extends AppCompatActivity {
         laptobs=findViewById(R.id.laptob);
         watches=findViewById(R.id.watches);
         mobilePhones=findViewById(R.id.mobiles);
+        adminLogout=findViewById(R.id.admin_logout_btn);
+        checkOrdersBtn=findViewById(R.id.check_order_btn);
     }
 }

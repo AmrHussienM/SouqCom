@@ -31,7 +31,7 @@
         app:layout_constraintHorizontal_bias="0.03"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/slogan_category"
-        app:layout_constraintVertical_bias="0.16000003" />
+        app:layout_constraintVertical_bias="0.089999974" />
 
 
     <ImageView
@@ -44,7 +44,7 @@
         app:layout_constraintHorizontal_bias="0.36"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/slogan_category"
-        app:layout_constraintVertical_bias="0.16000003" />
+        app:layout_constraintVertical_bias="0.089999974" />
 
 
     <ImageView
@@ -57,7 +57,7 @@
         app:layout_constraintHorizontal_bias="0.69"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/slogan_category"
-        app:layout_constraintVertical_bias="0.16000003" />
+        app:layout_constraintVertical_bias="0.089999974" />
 
     <ImageView
         android:id="@+id/sweather"
@@ -69,7 +69,7 @@
         app:layout_constraintHorizontal_bias="0.97"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/slogan_category"
-        app:layout_constraintVertical_bias="0.16000003" />
+        app:layout_constraintVertical_bias="0.089999974" />
 
 
     <ImageView
@@ -172,6 +172,34 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/shoes"
         app:layout_constraintVertical_bias="0.22000003" />
+
+    <Button
+        android:id="@+id/check_order_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/buttons"
+        android:text="check new orders"
+        android:textColor="@android:color/white"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/laptob"
+        app:layout_constraintVertical_bias="0.13999999"
+        tools:layout_editor_absoluteX="20dp" />
+
+    <Button
+        android:id="@+id/admin_logout_btn"
+        app:layout_constraintTop_toBottomOf="@id/check_order_btn"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        android:textSize="20sp"
+        android:background="@drawable/buttons"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"/>
+
 
 
 </android.support.constraint.ConstraintLayout>
