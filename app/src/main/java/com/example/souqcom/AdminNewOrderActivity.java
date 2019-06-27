@@ -1,7 +1,9 @@
 package com.example.souqcom;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -70,7 +72,42 @@ public class AdminNewOrderActivity extends AppCompatActivity {
                                 startActivity(intent);
                             }
                         });
+
+                        holder.itemView.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+
+                                CharSequence options[]=new CharSequence[]
+                                        {
+                                                "Yes",
+                                                "No"
+                                        };
+
+
+                                AlertDialog.Builder builder=new AlertDialog.Builder(AdminNewOrderActivity.this);
+                                builder.setTitle("Have you shipped this order products");
+                                builder.setItems(options, new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which)
+                                    {
+                                        if (which==0)
+                                        {
+                                            String uID=getRef(position).getKey();
+                                            removeOrder(uID);
+
+                                        }
+                                        else
+                                            {
+                                                finish();
+                                            }
+                                    }
+                                });
+
+                                builder.show();
+                            }
+                        });
                     }
+
 
 
                     @NonNull
@@ -84,6 +121,12 @@ public class AdminNewOrderActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         adapter.startListening();
 
+
+    }
+
+    private void removeOrder(String uID)
+    {
+        orderRef.child(uID).removeValue();
 
     }
 
