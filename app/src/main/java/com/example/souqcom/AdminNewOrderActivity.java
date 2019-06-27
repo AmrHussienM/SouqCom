@@ -1,5 +1,6 @@
 package com.example.souqcom;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.souqcom.Model.AdminOrders;
+import com.example.souqcom.Prevalent.Prevalent;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
@@ -21,6 +23,8 @@ public class AdminNewOrderActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private DatabaseReference orderRef;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,14 +50,28 @@ public class AdminNewOrderActivity extends AppCompatActivity {
         FirebaseRecyclerAdapter<AdminOrders, AdminOrdersViewHolder> adapter=
                 new FirebaseRecyclerAdapter<AdminOrders, AdminOrdersViewHolder>(options) {
                     @Override
-                    protected void onBindViewHolder(@NonNull AdminOrdersViewHolder holder, int position, @NonNull AdminOrders model) {
+                    protected void onBindViewHolder(@NonNull AdminOrdersViewHolder holder, final int position, @NonNull final AdminOrders model) {
 
                         holder.userName.setText("Name: " + model.getName());
                         holder.phoneNumber.setText("Phone: " + model.getPhone());
                         holder.userTotalPrice.setText("Total Amount= $" + model.getTotalAmount());
                         holder.userDateTime.setText("Order at: " + model.getDate() + " " + model.getTime());
                         holder.userShippingAddress.setText("Shipping Address: " + model.getAddress() + ", " + model.getCity());
+
+                        holder.showOrderButton.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+
+                                String uID=getRef(position).getKey();
+
+
+                                Intent intent=new Intent(AdminNewOrderActivity.this,AdminUserProductsActivity.class);
+                                intent.putExtra("uid",uID);
+                                startActivity(intent);
+                            }
+                        });
                     }
+
 
                     @NonNull
                     @Override

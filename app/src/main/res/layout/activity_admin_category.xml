@@ -185,7 +185,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/laptob"
-        app:layout_constraintVertical_bias="0.13999999"
+        app:layout_constraintVertical_bias="0.19999999"
         tools:layout_editor_absoluteX="20dp" />
 
     <Button
